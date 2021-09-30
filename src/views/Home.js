@@ -1,19 +1,28 @@
-import { Button, Card, CardTitle, CardText } from 'reactstrap';
-
-const Home = () => {
-    return (
-      <div className="Home">
-        <Card>
-          <CardTitle><Button color="dark"></Button></CardTitle>
-          <CardText>MESERO</CardText>
-        </Card>
-        <Card>
-          <CardTitle><Button color="dark"></Button></CardTitle>
-          <CardText>COCINA</CardText>
-        </Card>
+import React from "react";
+// import { Button, Card, CardTitle, CardText } from 'reactstrap';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Waiter from './Waiter';
+// import Breakfast from "./Breakfast";
+export default function Home() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
+            <li>
+              <Link to="/waiter">Mesero</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-    );
-  }
-  
-  export default Home;
-  
+      <Switch>
+        <Route path="/waiter">
+          <Waiter />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
