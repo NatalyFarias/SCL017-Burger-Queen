@@ -1,10 +1,11 @@
-.Home {
-  display: flex;
-  height: 25vh;
+.home {
+  margin-top: 50px;
 }
 
-.Home-vertical-center {
+.center-image {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  height: 100%;
   width: 100%;
 }
