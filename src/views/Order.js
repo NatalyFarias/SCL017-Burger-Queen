@@ -1,17 +1,17 @@
-import './OrderDetail.css'
+import iconCheck from'./../assets/images/check.png';
 import { Table, Button, Container } from 'reactstrap';
 
-const OrderDetail = () => {
+const Order = () => {
     return (
-        <Container className='OrderDetail'>
+        <Container className='Order'>
             <Table>
                 {/*se definen columnas*/}
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th>Subtotal</th>
+                        <th>Cliente</th>
+                        <th>N° de Orden</th>
+                        <th>N° Mesa</th>
+                        <th>Estado de pedido</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -19,10 +19,10 @@ const OrderDetail = () => {
                 <tbody>
                     <tr>
                         <td><Button color='secondary'>ICONO</Button></td>
-                        <td>1</td>
-                        <td>500</td>
-                        <td>500</td>
-                        <td><Button color='danger'>ELIMINAR</Button></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><Button ><img src={iconCheck} alt="check" width="25" height="25" /></Button></td>
                     </tr>
                 </tbody>
             </Table>
@@ -30,4 +30,4 @@ const OrderDetail = () => {
     )
 }
 
-export default OrderDetail;
+export default Order;

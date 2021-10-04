@@ -1,0 +1,10 @@
+.Home {
+  display: flex;
+  height: 25vh;
+}
+
+.Home-vertical-center {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

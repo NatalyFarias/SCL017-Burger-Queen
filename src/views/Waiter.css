@@ -1,0 +1,10 @@
+.Waiter {
+  display: flex;
+  height: 50vh;
+}
+
+.Waiter-vertical-center {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

@@ -1,23 +1,47 @@
-import { Button, Card, CardTitle, CardText } from 'reactstrap';
+import './Waiter.css';
+import React from "react";
+import { Container, Row, Col, Card, CardBody } from 'reactstrap';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Breakfast from './Breakfast'
+import Home from './Home';
 
-const Waiter = () => {
-    return (
-      <div className="Waiter">
-        <Card>
-          <CardTitle><Button color="dark"></Button></CardTitle>
-          <CardText>MENÚ</CardText>
-        </Card>
-        <Card>
-          <CardTitle><Button color="dark"></Button></CardTitle>
-          <CardText>DESAYUNO</CardText>
-        </Card>
-        <Card>
-          <CardTitle><Button color="dark"></Button></CardTitle>
-          <CardText>PEDIDOS</CardText>
-        </Card>
-      </div>
-    );
-  }
-  
-  export default Waiter;
-  
+export default function Waiter() {
+  return (
+    <Router>
+      <Container className="Waiter">
+        <Row className="Waiter-vertical-center">
+          <Col md="8">
+            <Card>
+              <CardBody>
+                <Link to="/menu">Menú</Link>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col md="8">
+            <Card>
+              <CardBody>
+                <Link to="/breakfast">Desayuno</Link>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col md="8">
+            <Card>
+              <CardBody>
+                <Link to="/orders">Pedidos</Link>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container >
+
+      <Switch>
+        <Route path="/breakfast">
+          <Breakfast />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
