@@ -3,7 +3,7 @@ import OrderDetail from "./../components/OrderDetail";
 
 const Breakfast = () => {
     return (
-        <div className='Breakfast'>
+        <div className='breakfast'>
             <MenuBreakfast />
             <hr />
             <OrderDetail />

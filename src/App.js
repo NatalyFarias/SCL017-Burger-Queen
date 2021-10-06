@@ -3,21 +3,38 @@ import logo from './assets/images/logo-burger.png';
 import iconMenu from './assets/images/menu-almuerzo.png';
 import iconMenuDesayuno from './assets/images/menu-desayuno.png';
 import iconOrder from './assets/images/orden.png';
-
 import React, { useState } from "react";
-import { Card, CardBody, Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import {
+  Card,
+  CardBody,
+  Nav,
+  Navbar,
+  NavbarToggler,
+  Collapse,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
 import Breakfast from './views/Breakfast';
 import Lunch from './views/Lunch';
 import Order from './views/Order';
 import Home from './views/Home'
 
-export default function App() {
+const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div className ="app">
+    <div className="app">
       <Router>
         <Navbar color="light" light expand="md">
           <Link to="/"><img src={logo} alt="Logo MR-Burger" width="100" height="100" /></Link>
@@ -80,4 +97,6 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
 
