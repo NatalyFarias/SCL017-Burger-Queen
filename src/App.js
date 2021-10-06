@@ -1,8 +1,9 @@
 import './App.css';
 import logo from './assets/images/logo-burger.png';
+import cocinero from'./assets/images/cocinero.png'
 import iconMenu from './assets/images/menu-almuerzo.png';
-import iconMenuDesayuno from './assets/images/menu-desayuno.png';
 import iconOrder from './assets/images/orden.png';
+import mesero from './assets/images/mesero.png';
 import React, { useState } from "react";
 import {
   Card,
@@ -24,10 +25,9 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
-import Breakfast from './views/Breakfast';
-import Lunch from './views/Lunch';
 import Order from './views/Order';
-import Home from './views/Home'
+import Home from './views/Home';
+import Menu from './views/Menu';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,27 +42,18 @@ const App = () => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem className="ml-4">
-                <NavLink href="/kitchen/">COCINA</NavLink>
+                <NavLink href="/kitchen/"><img src={cocinero} alt="cocina" width="50" height="50" /><span className="ml-50">COCINA</span></NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              <UncontrolledDropdown nav inNavbar className="ml-4">
                 <DropdownToggle nav caret>
-                  MESERO
+                <img src={mesero} alt="mesero" width="50" height="50" /><span className="ml-50">MESERO</span>
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-
                     <Card>
                       <CardBody>
-                        <img src={iconMenu} alt="menu almuerzo" width="25" height="25" />
-                        <Link to="/lunch">MENÚ</Link>
-                      </CardBody>
-                    </Card>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Card>
-                      <CardBody>
-                        <img src={iconMenuDesayuno} alt="menu desayuno" width="25" height="25" />
-                        <Link to="/breakfast">DESAYUNO</Link>
+                        
+                        <Link to="/menu"><img src={iconMenu} alt="menu almuerzo" width="25" height="25" /><span className="ml-50" >MENÚ</span></Link>
                       </CardBody>
                     </Card>
                   </DropdownItem>
@@ -80,11 +71,8 @@ const App = () => {
           </Collapse>
         </Navbar>
         <Switch>
-          <Route path="/breakfast">
-            <Breakfast />
-          </Route>
-          <Route path="/lunch">
-            <Lunch />
+          <Route path="/menu">
+            <Menu />
           </Route>
           <Route path="/order">
             <Order />

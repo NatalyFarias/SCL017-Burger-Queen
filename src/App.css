@@ -2,4 +2,14 @@
   text-align: center;
   background-image: url('./assets/images/fondo-burguer.png');
 }
+.app .ml-50{
+  margin-left: 10px;
+  
+}
+.app .ml-4{
+  background-color: #A6A4A0;
+  margin-left: 10px;
+}
+
+
 

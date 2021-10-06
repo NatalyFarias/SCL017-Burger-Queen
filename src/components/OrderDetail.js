@@ -1,10 +1,13 @@
 import './OrderDetail.css'
 import { Table, Button, Container } from 'reactstrap';
+import eliminar_22 from './../assets/images/eliminar_22.png';
 
-const OrderDetail = () => {
+
+export default function OrderDetail({ orders }) {
+    console.log('hola mundo');
     return (
         <Container className='OrderDetail'>
-            <Table>
+            <Table hover>
                 {/*se definen columnas*/}
                 <thead>
                     <tr>
@@ -17,17 +20,19 @@ const OrderDetail = () => {
                 </thead>
                 {/* aca se gregan valores*/}
                 <tbody>
-                    <tr>
-                        <td><Button color='secondary'>ICONO</Button></td>
-                        <td>1</td>
-                        <td>500</td>
-                        <td>500</td>
-                        <td><Button color='danger'>ELIMINAR</Button></td>
-                    </tr>
+                    {
+                        [...orders].map(order => (
+                            <tr key={order.id}>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><Button><img src={eliminar_22} alt="eliminar" width="25" height="25" /></Button></td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </Table>
         </Container>
     )
 }
-
-export default OrderDetail;
