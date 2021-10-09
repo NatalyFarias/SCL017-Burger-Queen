@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import OrderDetail from "../components/OrderDetail";
-import Product from "../components/Product";
+import ProductList from "../components/ProductList";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Menu() {
     const [orders, setOrders] = useState([]);
-    // setOrders(menuBreakfast);
 
     const handleAddProduct = (menu) => {
         setOrders((prevOrders) => {
             return [...prevOrders, {
-                id: menu.id,
+                id: uuidv4(),
                 name: menu.name,
                 price: menu.price,
                 image: menu.image,
@@ -21,7 +21,7 @@ export default function Menu() {
 
     return (
         <div className='Lunch'>
-            <Product handleAddProduct={handleAddProduct} />
+            <ProductList handleAddProduct={handleAddProduct} />
             <hr />
             <OrderDetail orders={orders} />
         </div>

@@ -52,8 +52,7 @@ const App = () => {
                   <DropdownItem>
                     <Card>
                       <CardBody>
-                        
-                        <Link to="/menu"><img src={iconMenu} alt="menu almuerzo" width="25" height="25" /><span className="ml-50" >MENÚ</span></Link>
+                        <Link to="/menu" className="text-decoration-none text-dark"><img src={iconMenu} alt="menu almuerzo" width="25" height="25" /><span className="ml-50" >MENÚ</span></Link>
                       </CardBody>
                     </Card>
                   </DropdownItem>
