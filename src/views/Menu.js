@@ -19,11 +19,20 @@ export default function Menu() {
         // setOrders(menuBreakfast);
     };
 
+    const handleDeleteProduct = (id) => {
+        console.log('id: ' + id);
+        const newOrders = [...orders];
+        const index = newOrders.findIndex(elemento => elemento.id == id);
+        newOrders.splice(index, 1);
+        console.log('index: ' + index);
+        setOrders(newOrders);
+    };
+
     return (
         <div className='Lunch'>
             <ProductList handleAddProduct={handleAddProduct} />
             <hr />
-            <OrderDetail orders={orders} />
+            <OrderDetail orders={orders} setOrders={setOrders} handleDeleteProduct={handleDeleteProduct} />
         </div>
     )
 }

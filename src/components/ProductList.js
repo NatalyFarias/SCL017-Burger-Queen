@@ -21,7 +21,6 @@ export default function ProductList({ handleAddProduct }) {
     if (activeTab !== tab) setActiveTab(tab);
   }
   const handleClickAddProduct = (menu) => {
-    console.log('se hizo click : ' + menu.price);
     handleAddProduct(menu);
   }
   return (

@@ -1,14 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import {
-  Row,
-  Col,
-  TabContent,
-  TabPane,
-  Nav,
-  NavItem,
-  NavLink,
   Button,
   Card,
+  CardBody,
   CardImg,
   CardText,
   CardTitle,
@@ -25,13 +19,13 @@ export default function Product({ menu, handleClickAddProduct }) {
   return (
     <div>
       <Card body>
-        <section className="d-flex justify-content-center">
-          <CardImg className="w-25" src={image} alt="Imagen de Producto" />
-        </section>
-        <CardTitle>{name}</CardTitle>
-        <CardText>Precio: {price}</CardText>
-        <section className="d-flex justify-content-center">
-          <Button id={"product-" + id} key={id} type="button" className="w-25" onClick={handleClickAddNewProduct}>Agregar</Button>
+        <section className="d-flex justify-content-between">
+          <img className="w-25" src={image} alt="Imagen de Producto" />
+          <section className="d-flex flex-column justify-content-center">
+            <CardTitle>{name}</CardTitle>
+            <CardText>Precio: {price}</CardText>
+          </section>
+          <Button id={"product-" + id} key={id} type="button" className="w-15" onClick={handleClickAddNewProduct}>Agregar</Button>
         </section>
       </Card>
     </div>
