@@ -1,5 +1,5 @@
 import './OrderDetail.css'
-import { Table, Button, Container, Card } from 'reactstrap';
+import { Table, Container, Card } from 'reactstrap';
 import eliminar_22 from './../assets/images/eliminar_22.png';
 
 export default function OrderDetail({ orders, setOrders, handleDeleteProduct }) {

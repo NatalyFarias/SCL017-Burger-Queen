@@ -1,6 +1,6 @@
 import './App.css';
 import logo from './assets/images/logo-burger.png';
-import cocinero from'./assets/images/cocinero.png'
+import cocinero from './assets/images/cocinero.png'
 import iconMenu from './assets/images/menu-almuerzo.png';
 import iconOrder from './assets/images/orden.png';
 import mesero from './assets/images/mesero.png';
@@ -28,6 +28,7 @@ import {
 import Order from './views/Order';
 import Home from './views/Home';
 import Menu from './views/Menu';
+import Kitchen from './views/Kitchen'
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,11 +43,11 @@ const App = () => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem className="ml-4">
-                <NavLink href="/kitchen/"><img src={cocinero} alt="cocina" width="50" height="50" /><span className="ml-50">COCINA</span></NavLink>
+                <Link to="/kitchen" className="text-decoration-none text-dark"><img src={cocinero} alt="cocina" width="50" height="50" /><span className="ml-50" >COCINA</span></Link>
               </NavItem>
               <UncontrolledDropdown nav inNavbar className="ml-4">
                 <DropdownToggle nav caret>
-                <img src={mesero} alt="mesero" width="50" height="50" /><span className="ml-50">MESERO</span>
+                  <img src={mesero} alt="mesero" width="50" height="50" /><span className="ml-50">MESERO</span>
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
@@ -70,6 +71,9 @@ const App = () => {
           </Collapse>
         </Navbar>
         <Switch>
+          <Route path="/kitchen">
+            <Kitchen />
+          </Route>
           <Route path="/menu">
             <Menu />
           </Route>

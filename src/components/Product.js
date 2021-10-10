@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Button,
   Card,
-  CardBody,
-  CardImg,
   CardText,
   CardTitle,
 } from 'reactstrap';
