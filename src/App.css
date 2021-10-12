@@ -1,6 +1,7 @@
 .app {
   text-align: center;
   background-image: url('./assets/images/fondo-burguer.png');
+  background-size: contain;
 }
 .app .ml-50{
   margin-left: 10px;

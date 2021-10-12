@@ -20,9 +20,6 @@ export default function ProductList({ handleAddProduct }) {
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
   }
-  const handleClickAddProduct = (menu) => {
-    handleAddProduct(menu);
-  }
   return (
     <div>
       <Nav tabs>
@@ -49,7 +46,7 @@ export default function ProductList({ handleAddProduct }) {
             {
               menuBreakfast.map((menu) => (
                 <Col key={menu.id} sm="6">
-                  <Product menu={menu} handleClickAddProduct={handleClickAddProduct} />
+                  <Product menu={menu} handleAddProduct={handleAddProduct} />
                 </Col>
               ))
             }
@@ -60,7 +57,7 @@ export default function ProductList({ handleAddProduct }) {
             {
               menuLunch.map((menu) => (
                 <Col key={menu.id} sm="6">
-                  <Product menu={menu} handleClickAddProduct={handleClickAddProduct} />
+                  <Product menu={menu} handleAddProduct={handleAddProduct} />
                 </Col>
               ))
             }

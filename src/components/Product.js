@@ -6,11 +6,12 @@ import {
   CardTitle,
 } from 'reactstrap';
 
-export default function Product({ menu, handleClickAddProduct }) {
-  const { id, image, name, price } = menu
-
+export default function Product({ menu, handleAddProduct }) {
+  const { id, image, name, price } = menu;
+//funcion que se encarga de llamar a la refereancia del metodo handleaddproduct al momento de precionar el click en agregar 
   const handleClickAddNewProduct = () => {
-    handleClickAddProduct({
+    //funcion que viene del productlist
+    handleAddProduct({
       id, image, name, price
     });
   }
